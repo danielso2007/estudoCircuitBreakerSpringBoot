@@ -1,0 +1,38 @@
+---
+spring:
+  application:
+    name: api-publication
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      authentication-database: admin
+      username: root
+      password: MongoDB!
+      database: circuit-breaker
+  main:
+    allow-circular-references: true
+  devtools:
+    add-properties: false
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    default-property-inclusion: NON_NULL
+    locale: pt-BR
+    time-zone: America/Sao_Paulo
+  server:
+    compression:
+      enabled: true
+      min-response-size: 1
+    port: 8081
+client:
+  comments:
+    url: http://localhost:8082
+resilience4j.circuitbreaker:
+  instances:
+    comments:
+      slidingWindowSize: 8 #Janela de chamadas
+      minimumNumberOfCalls: 4
+      #slowCallRateThreshold: 50 #Percentual de erros
+      #slowCallDurationThreshold: 2000
+      #permittedNumberOfCallsInHalfOpenState: 2
+      waitDurationInOpenState: 15000

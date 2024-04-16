@@ -1,0 +1,23 @@
+{
+   "request":{
+      "method":"GET",
+      "url":"/api/v1/comments/661e085abb616b2fdb124855"
+   },
+   "response":{
+      "fixedDelayMilliseconds": "500",
+      "status":200,
+      "headers":{
+         "Content-Type":"application/json"
+      },
+      "jsonBody":[
+         {
+            "author":"João",
+            "text":"Muito bom o curso do DevDeOlho"
+         },
+         {
+            "author":"Daniel",
+            "text":"Muito bom o curso para estudo"
+         }
+      ]
+   }
+}
